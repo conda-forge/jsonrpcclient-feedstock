@@ -1,17 +1,17 @@
 {% set name = "jsonrpcclient" %}
-{% set version = "3.3.4" %}
+{% set version = "3.3.6" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: c50860409b73af9f94b648439caae3b4af80d5ac937f2a8ac7783de3d1050ba9
+  sha256: 2f2d218de00ff7532f69efed2e2515d30c90f873e5cb91bf00de996dfb782f8a
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - jsonrpc=jsonrpcclient.__main__:main
   noarch: python
