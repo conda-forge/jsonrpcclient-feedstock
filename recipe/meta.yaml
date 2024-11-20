@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: c0d475494b3e1b591ecdee7883739accaf5695edb673f16b7383b8c6bbdb1ca3
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - jsonrpc=jsonrpcclient.__main__:main
@@ -22,9 +22,6 @@ requirements:
     - python >=3.5
   run:
     - python >=3.5
-    - apply_defaults <1
-    - click <7
-    - jsonschema <4
 
 test:
   imports:
