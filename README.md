@@ -148,4 +148,5 @@ Feedstock Maintainers
 =====================
 
 * [@bcb](https://github.com/bcb/)
+* [@beenje](https://github.com/beenje/)
 
