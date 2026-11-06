@@ -1,13 +1,13 @@
 {% set name = "jsonrpcclient" %}
-{% set version = "4.0.3" %}
+{% set version = "4.2.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/explodinglabs/jsonrpcclient/archive/refs/tags/{{ version }}.tar.gz
-  sha256: f2343c0f4cacb6c7fd0a824593c08dd58e9adf197d9d932fa20fdfeae68bc54e
+  url: https://github.com/explodinglabs/jsonrpcclient/archive/refs/tags/v{{ version }}.tar.gz
+  sha256: cb3524dcd7bd2a5077713c923243baed0c803d0e6badfd7d6b8e0e127a499153
 
 build:
   number: 0
