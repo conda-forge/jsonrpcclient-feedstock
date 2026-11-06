@@ -1,0 +1,49 @@
+schema_version: 1
+
+context:
+  name: jsonrpcclient
+  version: "4.2.1"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
+  sha256: 3a9af03722a86706a7e6f9878b5a1627a18d9b06b5b3d523a921afcde29e0b73
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - pip
+    - flit-core >=3.12,<5
+    - python ${{ python_min }}.*
+  run:
+    - python >=${{ python_min }}
+
+tests:
+  - python:
+      imports:
+        - jsonrpcclient
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - 3.*
+
+about:
+  license: MIT
+  license_file: LICENSE
+  summary: Create JSON-RPC 2.0 requests and parse responses in Python.
+  homepage: https://bensynapse.github.io/jsonrpcclient/
+  repository: https://github.com/bensynapse/jsonrpcclient
+  documentation: https://bensynapse.github.io/jsonrpcclient/
+
+extra:
+  recipe-maintainers:
+    - bcb
+    - beenje
+    - bensynapse
